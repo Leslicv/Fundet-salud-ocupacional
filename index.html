@@ -232,28 +232,30 @@
 </footer>
 
 <script>
-  const $ = id => document.getElementById(id);
+ const $ = id => document.getElementById(id);
 
-  // ── LOGIN ──
-  $('btnIngresar').addEventListener('click', () => {
-    const nombre = $('nombre').value.trim();
-    const area   = $('area').value.trim();
-    if (!nombre || !area) {
-      alert('Por favor complete todos los campos.');
-      return;
-    }
-    $('bienvenida').textContent = 'Bienvenido/a, ' + nombre;
-    $('login-section').style.display = 'none';
-    $('portal-section').style.display = 'block';
-    $('btnSalir').style.display = 'flex';
-  });
+// ── LOGIN ──
+$('btnIngresar').addEventListener('click', () => {
+  const nombre = $('nombre').value.trim();
+  const clave  = $('clave').value.trim();
 
-  // Ingresar con Enter
-  [$('nombre'), $('area')].forEach(el => {
-    el.addEventListener('keydown', e => {
-      if (e.key === 'Enter') $('btnIngresar').click();
-    });
-  });
+  if (!nombre || !clave) {
+    alert('Por favor complete todos los campos.');
+    return;
+  }
+
+  if (clave !== 'Fundet2026') {
+    alert('Contraseña incorrecta. Inténtelo de nuevo.');
+    $('clave').value = '';
+    $('clave').focus();
+    return;
+  }
+
+  $('bienvenida').textContent = 'Bienvenido/a, ' + nombre;
+  $('login-section').style.display = 'none';
+  $('portal-section').style.display = 'block';
+  $('btnSalir').style.display = 'flex';
+});
 
   // ── CERRAR SESIÓN ──
   $('btnSalir').addEventListener('click', () => {
