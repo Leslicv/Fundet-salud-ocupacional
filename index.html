@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Salud Ocupacional - FUNDET</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo-box">
+    <!-- Si tienes la imagen fundet.jpeg en la misma carpeta, aparecerá aquí -->
+    <img src="fundet.jpeg" alt="Logo FUNDET"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+    <span class="logo-fallback" style="display:none">FUNDET</span>
+  </div>
+  <div>
+    <div class="header-title">Portal de Salud Ocupacional</div>
+    <div class="header-sub">Capacitaciones, certificados y calculadoras preventivas</div>
+  </div>
+  <button class="btn-salir" id="btnSalir">
+    <span>Cerrar sesión</span>
+  </button>
+</header>
+
+<!-- ══ LOGIN ══ -->
+<div id="login-section">
+  <div class="login-card">
+    <h2>Ingreso del trabajador</h2>
+    <p>Ingrese sus datos para acceder al portal.</p>
+
+    <label for="nombre">Nombres y apellidos</label>
+    <input type="text" id="nombre" placeholder="Ejemplo: Juan Pérez" />
+
+    <label for="area">Área de trabajo</label>
+    <input type="text" id="area" placeholder="Ejemplo: Administración" />
+
+    <button class="btn-primary" id="btnIngresar">Ingresar al portal</button>
+  </div>
+</div>
+
+<!-- ══ PORTAL ══ -->
+<div id="portal-section">
+
+  <!-- INICIO -->
+  <div class="section active" id="inicio">
+    <div class="welcome-banner">
+      <div>
+        <h2 id="bienvenida">Bienvenido/a</h2>
+        <p>Seleccione una opción para continuar.</p>
+      </div>
+      <div class="welcome-icon">🏥</div>
+    </div>
+
+    <div class="menu-grid">
+      <div class="menu-card" data-sec="capacitaciones">
+        <div class="icon">📚</div>
+        <h3>Capacitaciones</h3>
+        <p>Acceda a temas de salud ocupacional y SST.</p>
+      </div>
+      <div class="menu-card" data-sec="certificados">
+        <div class="icon">📄</div>
+        <h3>Certificados</h3>
+        <p>Revise sus constancias disponibles.</p>
+      </div>
+      <div class="menu-card" data-sec="calculadoras">
+        <div class="icon">🧮</div>
+        <h3>Calculadoras</h3>
+        <p>IMC, presión arterial, agua diaria y pulso.</p>
+      </div>
+    </div>
+
+    <div class="alerta-info">
+      Este portal es informativo y preventivo. No reemplaza una evaluación médica ocupacional.
+    </div>
+  </div>
+
+  <!-- CAPACITACIONES -->
+  <div class="section" id="capacitaciones">
+    <div class="section-header">
+      <button class="back-btn" data-back="inicio">← Volver</button>
+      <h2>Capacitaciones disponibles</h2>
+    </div>
+    <div class="card">
+      <a class="cap-item"
+         href="https://ebalsconsultores-my.sharepoint.com/:f:/p/ebelin/IgDWJsa--bGwRaV68UmxM5TlAYuBdiVtaDN24WnbkRTLalY?e=fbQmsy"
+         target="_blank">
+        <div class="cap-left">
+          <span class="cap-icon">☀️</span>
+          <div>
+            <div class="cap-title">Protección Solar</div>
+            <div class="cap-sub">Salud ocupacional · SST</div>
+          </div>
+        </div>
+        <span class="cap-arrow">→</span>
+      </a>
+
+      <a class="cap-item"
+         href="https://ebalsconsultores-my.sharepoint.com/:f:/p/ebelin/IgDKrvZaerOTQLkaaJds-TcwAZuT2uUNcWHkTDNPaSZBEdM?e=AIhpIk"
+         target="_blank">
+        <div class="cap-left">
+          <span class="cap-icon">🧘</span>
+          <div>
+            <div class="cap-title">Ergonomía y Pausas Activas</div>
+            <div class="cap-sub">Salud ocupacional · Bienestar</div>
+          </div>
+        </div>
+        <span class="cap-arrow">→</span>
+      </a>
+
+      <a class="cap-item"
+         href="https://ebalsconsultores-my.sharepoint.com/:f:/p/ebelin/IgB21uc4JWJSToC5i228TpReATLhesHWQUzms7od6SMKg2M?e=RTy5CC"
+         target="_blank">
+        <div class="cap-left">
+          <span class="cap-icon">🧠</span>
+          <div>
+            <div class="cap-title">Cuidado de la Salud Mental</div>
+            <div class="cap-sub">Salud ocupacional · Psicología</div>
+          </div>
+        </div>
+        <span class="cap-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- CERTIFICADOS -->
+  <div class="section" id="certificados">
+    <div class="section-header">
+      <button class="back-btn" data-back="inicio">← Volver</button>
+      <h2>Certificados y constancias</h2>
+    </div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Capacitación</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Protección Solar</td>
+            <td>13 de Febrero 2026</td>
+            <td>
+              <a href="https://ebalsconsultores-my.sharepoint.com/:f:/p/ebelin/IgAhf0Kn724yRKYlOutvLHvzAQMxeOpJJl7Ezpy6oCyI3Mw?e=GM6IKn"
+                 target="_blank" class="badge badge-ok">✓ Disponible</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Pausas activas y ergonomía</td>
+            <td>17 de Marzo 2026</td>
+            <td>
+              <a href="https://ebalsconsultores-my.sharepoint.com/:f:/p/ebelin/IgCqDPGPWmMFR46whh1YBN1mAZxPCf-ctLDB-tCTrJ8ISAQ?e=qfaGN9"
+                 target="_blank" class="badge badge-ok">✓ Disponible</a>
+            </td>
+          </tr>
+          <tr>
+            <td>PAP y Cuidado de la Salud Mental</td>
+            <td>Pendiente de carga</td>
+            <td><span class="badge badge-pend">⏳ Pendiente</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alerta-info">
+      Los certificados se actualizan cuando el área ocupacional los carga al sistema.
+    </div>
+  </div>
+
+  <!-- CALCULADORAS -->
+  <div class="section" id="calculadoras">
+    <div class="section-header">
+      <button class="back-btn" data-back="inicio">← Volver</button>
+      <h2>Calculadoras de salud</h2>
+    </div>
+    <div class="card">
+      <div class="calc-grid">
+        <div>
+          <span class="calc-label">Edad</span>
+          <input class="calc-input" type="number" id="edad" placeholder="30" min="1" max="99" />
+        </div>
+        <div>
+          <span class="calc-label">Peso (kg)</span>
+          <input class="calc-input" type="number" id="peso" placeholder="70" min="1" />
+        </div>
+        <div>
+          <span class="calc-label">Talla (cm)</span>
+          <input class="calc-input" type="number" id="talla" placeholder="170" min="1" />
+        </div>
+        <div>
+          <span class="calc-label">Presión sistólica</span>
+          <input class="calc-input" type="number" id="sistolica" placeholder="120" />
+        </div>
+        <div>
+          <span class="calc-label">Presión diastólica</span>
+          <input class="calc-input" type="number" id="diastolica" placeholder="80" />
+        </div>
+        <div>
+          <span class="calc-label">Frecuencia cardiaca (lpm)</span>
+          <input class="calc-input" type="number" id="pulso" placeholder="75" />
+        </div>
+      </div>
+      <button class="btn-calc" id="btnCalc">Calcular resultados</button>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <h4>Índice de Masa Corporal (IMC)</h4>
+        <div class="val" id="rIMC">Complete peso y talla.</div>
+      </div>
+      <div class="result-card">
+        <h4>Presión arterial</h4>
+        <div class="val" id="rPresion">Complete presión sistólica y diastólica.</div>
+      </div>
+      <div class="result-card">
+        <h4>Agua diaria referencial</h4>
+        <div class="val" id="rAgua">Complete su peso.</div>
+      </div>
+      <div class="result-card">
+        <h4>Frecuencia cardiaca</h4>
+        <div class="val" id="rPulso">Complete frecuencia cardiaca.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /portal-section -->
+
+<footer>
+  Portal informativo de Salud Ocupacional | Uso interno · FUNDET
+</footer>
+
+<script>
+  const $ = id => document.getElementById(id);
+
+  // ── LOGIN ──
+  $('btnIngresar').addEventListener('click', () => {
+    const nombre = $('nombre').value.trim();
+    const area   = $('area').value.trim();
+    if (!nombre || !area) {
+      alert('Por favor complete todos los campos.');
+      return;
+    }
+    $('bienvenida').textContent = 'Bienvenido/a, ' + nombre;
+    $('login-section').style.display = 'none';
+    $('portal-section').style.display = 'block';
+    $('btnSalir').style.display = 'flex';
+  });
+
+  // Ingresar con Enter
+  [$('nombre'), $('area')].forEach(el => {
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter') $('btnIngresar').click();
+    });
+  });
+
+  // ── CERRAR SESIÓN ──
+  $('btnSalir').addEventListener('click', () => {
+    $('login-section').style.display = 'flex';
+    $('portal-section').style.display = 'none';
+    $('btnSalir').style.display = 'none';
+    $('nombre').value = '';
+    $('area').value = '';
+    showSection('inicio');
+  });
+
+  // ── NAVEGACIÓN ──
+  document.querySelectorAll('.menu-card').forEach(card => {
+    card.addEventListener('click', () => showSection(card.dataset.sec));
+  });
+
+  document.querySelectorAll('.back-btn').forEach(btn => {
+    btn.addEventListener('click', () => showSection(btn.dataset.back));
+  });
+
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    const el = $(id);
+    if (el) {
+      el.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  // ── CALCULADORAS ──
+  $('btnCalc').addEventListener('click', calcular);
+
+  function calcular() {
+    const peso      = parseFloat($('peso').value);
+    const talla     = parseFloat($('talla').value);
+    const sistolica = parseFloat($('sistolica').value);
+    const diastolica= parseFloat($('diastolica').value);
+    const pulso     = parseFloat($('pulso').value);
+
+    // IMC
+    if (peso > 0 && talla > 0) {
+      const imc = peso / Math.pow(talla / 100, 2);
+      let cat;
+      if      (imc < 18.5) cat = 'Bajo peso';
+      else if (imc < 25)   cat = 'Normal ✓';
+      else if (imc < 30)   cat = 'Sobrepeso';
+      else                 cat = 'Obesidad';
+      $('rIMC').textContent = imc.toFixed(1) + ' kg/m² — ' + cat;
+    } else {
+      $('rIMC').textContent = 'Complete peso y talla.';
+    }
+
+    // Agua diaria (35 ml por kg)
+    if (peso > 0) {
+      $('rAgua').textContent = (peso * 35 / 1000).toFixed(1) + ' litros / día';
+    } else {
+      $('rAgua').textContent = 'Complete su peso.';
+    }
+
+    // Presión arterial
+    if (sistolica > 0 && diastolica > 0) {
+      let cat;
+      if      (sistolica < 125 && diastolica < 85)  cat = 'Normal ✓';
+      else if (sistolica < 130 && diastolica < 90)  cat = 'Elevada';
+      else if (sistolica < 140 || diastolica < 90)  cat = 'Hipertensión estadio I';
+      else                                           cat = 'Hipertensión estadio II';
+      $('rPresion').textContent = sistolica + '/' + diastolica + ' mmHg — ' + cat;
+    } else {
+      $('rPresion').textContent = 'Complete presión sistólica y diastólica.';
+    }
+
+    // Frecuencia cardiaca
+    if (pulso > 0) {
+      let cat;
+      if      (pulso < 60)  cat = 'Bradicardia';
+      else if (pulso <= 100) cat = 'Normal ✓';
+      else                   cat = 'Taquicardia';
+      $('rPulso').textContent = pulso + ' lpm — ' + cat;
+    } else {
+      $('rPulso').textContent = 'Complete frecuencia cardiaca.';
+    }
+  }
+</script>
+
+</body>
+</html>
